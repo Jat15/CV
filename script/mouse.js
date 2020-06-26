@@ -6,7 +6,6 @@ var touchendY = 0
 
 document.querySelector("section").addEventListener('touchstart', function(event) {
     touchstartY = event.changedTouches[0].screenY
-    console.log(event)
 }, {passive: false})
 
 document.querySelector("section").addEventListener('touchend', function(event) {
@@ -15,15 +14,11 @@ document.querySelector("section").addEventListener('touchend', function(event) {
 }, {passive: false})
 
 function gesture() {
-    let event = {};
-  console.log(touchendY + " " + touchstartY)
+
+  let event = {}
+
   if (!(touchendY === touchstartY)) {
-      if (touchendY < touchstartY) {
-        event.deltaY = -3
-      }
-      else {
-        event.deltaY = 3
-      }
+    event.deltaY = touchendY > touchstartY ? -3 : 3     
     defil(event)
   }
 }
@@ -43,10 +38,9 @@ document.querySelector("section").addEventListener('wheel', defil, {passive: fal
 document.querySelector("section").addEventListener('touchmove', defil, {passive: false})
 
 function defil(event) {
-
   now_time = new Date().getTime()
 
-  if (event_time + 1000 < now_time)
+  if (event_time + 1000 < now_time && event.deltaY)
   {
     event_time = new Date().getTime()
 
