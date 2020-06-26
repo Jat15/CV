@@ -1,4 +1,32 @@
-var event_time = new Date().getTime() - 1000;
+/*
+  Capture les geste sur mobile
+*/
+var touchstartY = 0;
+var touchendY = 0;
+
+document.querySelector("section").addEventListener('touchstart', function(event) {
+    touchstartY = event.screenY;
+}, false);
+
+document.querySelector("section").addEventListener('touchend', function(event) {
+    touchendY = event.screenY;
+    gesture();
+}, false); 
+
+function gesture() {
+    let event = Object.create(person);
+
+  if (!touchendY == touchstartY) {
+      if (touchendY < touchstartY) {
+        event.deltaY = -3;
+      }
+      else {
+        event.deltaY = 3;
+      }
+    defil(event)
+  }
+}
+
 
 /*
   Timer pour évité le déplacement trop rapide.(décrochement des navigateur)
@@ -8,10 +36,15 @@ var event_time = new Date().getTime() - 1000;
   Le chemin logique est déduit et on l'envoie comme si c'était un clic.
 */
 
+var event_time = new Date().getTime() - 1000;
+
 document.querySelector("section").addEventListener('wheel', defil, {passive: false})
+document.querySelector("section").addEventListener('touchmove', defil, {passive: false})
 
 function defil(event) {
   event.preventDefault();
+
+  console.log(event)
 
   now_time = new Date().getTime();
 
@@ -48,19 +81,11 @@ function clic_menu() {
   document.querySelector('.selector').className = ''
   document.querySelector('.cat_selector').className = ''
 
-  if (this.parentNode.tagName == "H2")
-  {
+  if (this.parentNode.tagName == "H2") {
     selector_menu = this.parentNode.parentNode
-
-    //selector_name = this.parentNode.parentNode.firstChild.textContent
-
     cat_selector_menu = this.parentNode.parentNode.parentNode.parentNode
-    
-    //cat_selector_name = this.parentNode.parentNode.parentNode.parentNode.firstChild.textContent
-
   }
-  else
-  {
+  else {
     cat_selector_menu = this.parentNode.parentNode
     selector_menu = this.parentNode.parentNode.querySelector('li:first-child')
   }
