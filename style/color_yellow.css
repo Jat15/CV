@@ -1,0 +1,119 @@
+body {
+    background: black;
+    color:white;
+}
+
+
+/* Nav */
+
+nav {
+    background: yellow;
+    color:black;
+    box-shadow: inset -10px 0px 5px -5px rgba(0,0,0,0.5), inset 10px 0px 5px -5px rgba(0,0,0,0.5);
+}
+
+nav a {
+    color: black;
+}
+
+/* Selector */
+
+.selector{
+    background-color: black;
+}
+
+.selector a {
+    color:white;
+}
+
+.cat_selector {
+    background-color: rgba(0,0,0,0.25);
+    box-shadow: inset 10px 0px 5px 8px rgba(0,0,0,0.5);
+}
+
+/* Profil */
+
+#profil{
+    background-color: yellow;
+    box-shadow: inset -10px 5px 5px -5px rgba(0,0,0,0.8), inset 10px -5px 5px -5px rgba(0,0,0,0.8);
+}
+
+#profil > div{
+    background-color: black;
+}
+#profil > img{
+    border: 1px solid black;
+}
+
+
+/* Section */
+
+section a {
+    color:yellow;
+}
+
+/* Article */
+
+article > div > ul{
+    border: 1px solid white;
+    background-color: rgba(0,0,0,0.5);
+}
+
+/* Loisir  Compétence */
+
+#comp0 {
+    background-image: url('../img/grafcet-w.svg');
+}
+
+#comp1 {
+    background-image: url('../img/ladder-w.svg');
+}
+
+#comp2 {
+    background-image: url('../img/code.svg');
+}
+
+
+#lois0 {
+    background-image: url('../img/pc-w.svg');
+}
+
+#lois1 {
+    background-image: url('../img/lois1-w.svg');
+}
+
+/* Experience */
+
+
+.profession {
+    background-color: yellow;
+    color:black;
+    border: 1px solid white;
+
+}
+
+.lieu {
+    border: 1px solid white;
+}  
+
+.tache {
+    border: 1px solid white;
+}
+
+
+/* Petit écran */
+
+@media (max-width:1280px) {
+    /* Navigation */
+
+    header{
+        background-color: yellow;
+        color: black;
+    }
+
+    header a{
+        color:black;
+    }
+
+
+}

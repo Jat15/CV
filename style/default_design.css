@@ -1,0 +1,241 @@
+html {
+    scroll-behavior: smooth;
+} 
+body {
+    font-size: 1.5rem;
+    font-weight:100;
+    font-family: Regular;
+    display: flex;
+    flex-direction: row;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+li {
+    list-style: none;
+    padding-left: inherit;
+}
+
+header {
+    display: none;
+}
+
+/* Nav */
+
+nav {
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+    width: 20vw;
+    position: sticky;
+    top: 1vh;
+    transform: translate(0, -4vh) rotate(4deg);
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+    font-size: 1.7vh;
+    margin-left: 10px;
+}
+
+nav > ul {  
+    margin-left: 1rem;
+    padding-left: 0px;
+    
+}
+
+nav li{
+    margin-right: 1rem;
+}
+
+nav a {
+    font-weight: 900;
+    text-decoration: none;
+}
+
+/* Selector */
+
+
+.selector{
+    margin-right: 0px;
+}
+
+.cat_selector {
+    margin-right: 0px;
+    padding: 1px 0px 1px 20px;
+}
+
+.cat_selector ul{
+    display: block;
+}
+
+/* Profil */
+
+#profil{
+    font-family: 'Courier New';
+    display: flex;
+    flex-direction: row;
+    height: max-content;
+    padding: 0.25rem;
+}
+
+#profil > div{
+    padding: 10px;
+    margin: 5px;
+}
+#profil > img{
+    padding: 0px;
+    align-items: center;
+}
+
+img {
+    margin: 1.87rem;
+    padding: 20px;
+    height: 35vh;
+}
+
+i {
+   font-size: 2.5rem;
+}
+
+/* Section */
+
+section{
+    padding: 2rem;
+    width: 80vw;
+}
+
+section ul{
+    padding: 20vh 20vw 20vh 20vw;
+}
+section li{
+    padding-left: 0px;
+    padding-bottom: 1rem;
+}
+
+section a {
+    text-decoration: none;
+}
+
+/* Article */
+
+article > div{
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+/* Loisir  Compétence */
+
+#competence > div, #lois > div {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+}
+
+
+
+/* Experience */
+
+#xp > div > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    width: 70vw;
+}
+
+.profession {
+    padding: 1rem;
+}
+
+.lieu {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}  
+
+.tache {
+    padding: 1rem;
+    width: 100%;
+}
+
+
+/* Petit écran */
+
+@media (max-width:1280px) {
+    body{
+        font-size: 2vh;
+        flex-direction: column;
+    }
+
+    /* Profil */
+
+    img {
+      display: none;
+    }
+
+    /* Navigation */
+
+    header{
+        top: 0px;
+        height: max-content;
+        max-height: 10vh;
+        display: flex;
+        width: 100vw;
+        position: sticky;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    header a{
+        text-decoration: none;
+    }
+    
+    #lemenu:not(:target) {
+        display: none;
+    }
+
+    #lemenu:target {
+        display: block;
+    }
+  
+    nav{
+        top: 0px;
+        left: 0px;
+        transform: none;
+        margin-left: 0px;
+        min-height: 100vh;
+        height: max-content;
+        width: 100vw;
+        position: fixed;
+        overflow-y: scroll;
+        padding: 0px;
+    }
+
+    /* Section */
+
+    section{
+        width: 100vw;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    #xp > div > div{
+        width: 90vw;
+        padding-bottom: 0px;
+    }
+
+    .profession {
+        margin-bottom: 0px;
+        width: 100%;
+    }
+    .lieu
+    {
+        width: 100%;
+    }
+
+}

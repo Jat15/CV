@@ -1,0 +1,303 @@
+html {
+    scroll-behavior: smooth;
+} 
+body {
+    background: black;
+    color:white;
+    font-size: 1.5rem;
+    font-weight:100;
+    font-family: Regular;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+li {
+    list-style: none;
+    padding-left: inherit;
+}
+
+header {
+    display: none;
+}
+
+/* Nav */
+
+nav {
+    background: yellow;
+    color:black;
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+    width: 20vw;
+    position: sticky;
+    top: 1vh;
+    transform: translate(0, -4vh) rotate(4deg);
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+    font-size: 2vh;
+    box-shadow: inset -10px 0px 5px -5px rgba(0,0,0,0.5), inset 10px 0px 5px -5px rgba(0,0,0,0.5);
+    margin-left: 10px;
+}
+
+nav > ul {  
+    margin-left: 1rem;
+    padding-left: 0px;
+    
+}
+
+nav li{
+    margin-right: 1rem;
+}
+
+nav a {
+    color: black;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+nav ul li ul{
+    display: none;
+}
+
+/* Selector */
+
+.selector{
+    background-color: black;
+    margin-right: 0px;
+}
+
+.selector a {
+    color:white;
+}
+
+.cat_selector {
+    background-color: rgba(0,0,0,0.25);
+    margin-right: 0px;
+    box-shadow: inset 10px 0px 5px 8px rgba(0,0,0,0.5);
+    padding: 1px 0px 1px 20px;
+}
+
+.cat_selector ul{
+    display: block;
+}
+
+/* Profil */
+
+#profil{
+    font-family: 'Courier New';
+    display: flex;
+    flex-direction: row;
+    height: max-content;
+    padding: 0.25rem;
+    background-color: yellow;
+    box-shadow: inset -10px 5px 5px -5px rgba(0,0,0,0.8), inset 10px -5px 5px -5px rgba(0,0,0,0.8);
+}
+
+#profil > div{
+    background-color: black;
+    padding: 10px;
+    margin: 5px;
+    border-left: 1px solid white;
+}
+#profil > img{
+    border: 1px solid black;
+    padding: 0px;
+    align-items: center;
+}
+
+img {
+    margin: 1.87rem;
+    padding: 20px;
+    height: 35vh;
+}
+
+i {
+    font-size: 2.5rem;
+}
+
+/* Section */
+
+section{
+    padding: 2rem;
+    width: 80vw;
+}
+
+section ul{
+    padding: 20vh 20vw 20vh 20vw;
+}
+section li{
+    padding-left: 0px;
+    padding-bottom: 1rem;
+}
+
+section a {
+    text-decoration: none;
+    color:yellow;
+}
+
+/* Article */
+
+article > div{
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+article > div > ul{
+    border: 1px solid white;
+    background-color: rgba(0,0,0,0.5);
+}
+
+/* Loisir  Compétence */
+
+#competence > div, #lois > div {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+}
+
+#comp0 {
+    background-image: url('../img/grafcet.svg');
+}
+
+#comp1 {
+    background-image: url('../img/ladder.svg');
+}
+
+#comp2 {
+    background-image: url('../img/code.svg');
+}
+
+
+#lois0 {
+    background-image: url('../img/pc.svg');
+}
+
+#lois1 {
+    background-image: url('../img/lois1.svg');
+}
+
+/* Experience */
+
+#xp > div > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    width: 70vw;
+}
+
+.profession {
+    background-color: yellow;
+    color:black;
+    padding: 1rem;
+    border: 1px solid white;
+
+}
+
+.lieu {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    padding: 1rem;
+}  
+
+.tache {
+    padding: 1rem;
+    width: 100%;
+    border: 1px solid white;
+}
+
+
+/* Petit écran */
+
+@media (max-width:1280px) {
+    body{
+        font-size: 2vh;
+        flex-direction: column;
+    }
+
+    /* Profil */
+
+    img {
+      display: none;
+    }
+
+    /* Navigation */
+
+    header{
+        top: 0px;
+        display: block;
+
+        width: 100vw;
+        position: sticky;
+        background-color: yellow;
+    }
+
+    header a{
+        color:black;
+        text-decoration: none;
+    }
+    
+    #lemenu:not(:target) {
+        display: none;
+    }
+
+    #lemenu:target {
+        display: block;
+    }
+  
+    nav{
+        top: 0px;
+        left: 0px;
+        padding-top: 0px;
+        margin-left: 0px;
+        height: 100vh;
+        width: 100vw;
+        transform: none;
+        position: fixed;
+    }
+
+    nav > ul{    
+        padding-left: 0px
+    }
+
+    nav ul li ul{ 
+        display: block;
+    }
+  
+    .cat_selector {
+        width: 80vw;
+    }
+
+    /* Section */
+
+    section{
+        width: 100vw;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    #xp > div > div{
+        width: 90vw;
+        padding-bottom: 0px;
+    }
+
+    .profession {
+        margin-bottom: 0px;
+        width: 100%;
+    }
+    .lieu
+    {
+        width: 100%;
+    }
+
+}
