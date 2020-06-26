@@ -1,27 +1,28 @@
 /*
   Capture les geste sur mobile
 */
-var touchstartY = 0;
-var touchendY = 0;
+var touchstartY = 0
+var touchendY = 0
 
 document.querySelector("section").addEventListener('touchstart', function(event) {
-    touchstartY = event.screenY;
-}, false);
+    touchstartY = event.changedTouches[0].screenY
+    console.log(event)
+}, {passive: false})
 
 document.querySelector("section").addEventListener('touchend', function(event) {
-    touchendY = event.screenY;
-    gesture();
-}, false); 
+    touchendY = event.changedTouches[0].screenY
+    gesture()
+}, {passive: false})
 
 function gesture() {
-    let event = Object.create(person);
-
-  if (!touchendY == touchstartY) {
+    let event = {};
+  console.log(touchendY + " " + touchstartY)
+  if (!(touchendY === touchstartY)) {
       if (touchendY < touchstartY) {
-        event.deltaY = -3;
+        event.deltaY = -3
       }
       else {
-        event.deltaY = 3;
+        event.deltaY = 3
       }
     defil(event)
   }
@@ -42,15 +43,12 @@ document.querySelector("section").addEventListener('wheel', defil, {passive: fal
 document.querySelector("section").addEventListener('touchmove', defil, {passive: false})
 
 function defil(event) {
-  event.preventDefault();
 
-  console.log(event)
-
-  now_time = new Date().getTime();
+  now_time = new Date().getTime()
 
   if (event_time + 1000 < now_time)
   {
-    event_time = new Date().getTime();
+    event_time = new Date().getTime()
 
     let new_selector = event.deltaY > 0 ? document.querySelector('.selector').nextElementSibling : document.querySelector('.selector').previousElementSibling
     let new_cat_selector = event.deltaY > 0 ? document.querySelector('.cat_selector').nextElementSibling : document.querySelector('.cat_selector').previousElementSibling
@@ -95,8 +93,4 @@ function clic_menu() {
 
   document.querySelector('header > h1').innerText = cat_selector_menu.firstChild.textContent
   document.querySelector('header > h2').innerText = selector_menu.firstChild.textContent
-
-
-
-
 }
